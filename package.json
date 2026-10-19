@@ -1,0 +1,53 @@
+{
+  "name": "dshx-session-delete",
+  "version": "1.2.2",
+  "description": "Permanently delete a DSH conversation — sidebar menu item plus the removal endpoint the harness itself does not provide.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis"
+  ],
+  "author": "callaumyan-design",
+  "license": "MIT",
+  "homepage": "https://github.com/callaumyan-design/dshx-session-delete#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callaumyan-design/dshx-session-delete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/callaumyan-design/dshx-session-delete/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "client.js",
+    "cordis.patch.yml",
+    "index.js"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    },
+    "marketplace": {
+      "profiles": [
+        "web",
+        "desktop"
+      ],
+      "requiresBuildApproval": false,
+      "requiresRestart": true,
+      "manualSteps": false
+    }
+  }
+}
